@@ -10,8 +10,7 @@ import { take } from 'rxjs/operators';
 })
 export class CurrentJokeComponent implements OnInit {
   currentJoke: IJoke = {
-    joke: '',
-    liked: true,
+    joke: ''
   };
 
   ciao = 'hello';
@@ -25,10 +24,10 @@ export class CurrentJokeComponent implements OnInit {
         .pipe(take(1))
         .subscribe((joke) => {
           if (joke.type === 'single')
-            this.currentJoke!.joke = joke.joke as string;
+            this.currentJoke!.joke = joke.joke as string ;
           else {
             this.currentJoke!.joke = ((joke.setup as string) +
-              '\n' +
+              '<br/>' +
               joke.delivery) as string;
           }
         });
@@ -36,5 +35,9 @@ export class CurrentJokeComponent implements OnInit {
 
     retrieveJokes(); //first iteration
     setInterval(retrieveJokes, 4000);
+  }
+
+  sendLiked() {
+
   }
 }
