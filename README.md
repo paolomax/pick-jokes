@@ -16,9 +16,13 @@ The app also adapts to the size of a mobile screen or tablet.
 
 To create this small App the concepts of:
 
--Ng Modules
--Lazy Loading
--RxJS (Observables, pipe, BehaviourSubjects etc.)
--HttpClient
+- Ng Modules
+- Lazy Loading
+- RxJS (Observables, pipe, BehaviourSubjects etc.)
+- HttpClient
 
 have been used.
+
+## Preview 
+
+![Screenshot](http://paolomax.altervista.org/joke-app.png) 
