@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IJoke } from 'src/app/models/joke';
 import { DataServiceService } from 'src/app/shared/data-service.service';
-import { take } from 'rxjs/operators'
+import { take } from 'rxjs/operators';
 
 @Component({
   selector: 'pjk-current-joke',
@@ -14,24 +14,16 @@ export class CurrentJokeComponent implements OnInit {
     liked: true,
   };
 
+  ciao = 'hello';
+
   constructor(private dataService: DataServiceService) {}
 
   ngOnInit(): void {
-
-    //first iteration instantly
-    let subscription = this.dataService.getJoke().pipe(take(1)).subscribe((joke) => {
-      if (joke.type === 'single')
-        this.currentJoke!.joke = joke.joke as string;
-      else {
-        this.currentJoke!.joke = ((joke.setup as string) +
-          '\n' +
-          joke.delivery) as string;
-      }
-    })
-
-    setInterval(
-      () =>
-        this.dataService.getJoke().pipe(take(1)).subscribe((joke) => {
+    let retrieveJokes = () => {
+      this.dataService
+        .getJoke()
+        .pipe(take(1))
+        .subscribe((joke) => {
           if (joke.type === 'single')
             this.currentJoke!.joke = joke.joke as string;
           else {
@@ -39,8 +31,10 @@ export class CurrentJokeComponent implements OnInit {
               '\n' +
               joke.delivery) as string;
           }
-        }),
-      10000
-    );
+        });
+    };
+
+    retrieveJokes(); //first iteration
+    setInterval(retrieveJokes, 4000);
   }
 }
