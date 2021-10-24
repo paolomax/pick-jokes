@@ -1,7 +1,11 @@
 .container {
     margin-top: 10vh;
+    min-height: 15vh;
+    height: 30vh;
     background-color: green;
     color: black;
+    border-radius: 10px;
+    overflow-y: scroll;
 }
 
 button {

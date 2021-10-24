@@ -17,7 +17,7 @@ export class DataServiceService {
   constructor(private httpClient: HttpClient) {}
 
   addLiked(joke: IJoke) {
-    //checks if not already present in the array
+    //checks if not already present in both arrays
     this.disliked.forEach((element, index, arr) => {
       if (element.joke === joke.joke) arr.splice(index, 1);
     });

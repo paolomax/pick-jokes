@@ -1,5 +1,5 @@
-<div class="container text-center py-5">
-    <div *ngFor="let d of disliked">
+<div class="container text-center py-3">
+    <div *ngFor="let d of disliked" class="py-2">
         <p [innerHtml] = d.joke></p>
         <button class="button like" (click)="addLiked(d.joke)">Like</button>
     </div>
