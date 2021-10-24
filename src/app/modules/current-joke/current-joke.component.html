@@ -1,4 +1,4 @@
 <div class="container text-center d-flex align-items-center justify-content-center" [innerHTML] = currentJoke.joke></div>
 <div class="container text-center d-flex align-items-center justify-content-around">
-    <button>Like</button> <button>Dislike</button>
+    <button (click)="addLiked(currentJoke.joke)">Like</button> <button>Dislike</button>
 </div>

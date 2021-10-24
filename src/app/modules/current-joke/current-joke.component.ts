@@ -13,8 +13,6 @@ export class CurrentJokeComponent implements OnInit {
     joke: ''
   };
 
-  ciao = 'hello';
-
   constructor(private dataService: DataServiceService) {}
 
   ngOnInit(): void {
@@ -37,7 +35,7 @@ export class CurrentJokeComponent implements OnInit {
     setInterval(retrieveJokes, 4000);
   }
 
-  sendLiked() {
-
+  addLiked(j : string) {
+    this.dataService.addLiked({joke: j});
   }
 }
