@@ -32,10 +32,14 @@ export class CurrentJokeComponent implements OnInit {
     };
 
     retrieveJokes(); //first iteration
-    setInterval(retrieveJokes, 4000);
+    setInterval(retrieveJokes, 15000);
   }
 
   addLiked(j : string) {
+    this.dataService.addLiked({joke: j});
+  }
+
+  addDisLiked(j : string) {
     this.dataService.addLiked({joke: j});
   }
 }

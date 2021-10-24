@@ -14,14 +14,17 @@ export class DataServiceService {
   private likedSubject = new BehaviorSubject<IJoke[]>(this.liked);
   private dislikedSubject = new BehaviorSubject<IJoke[]>(this.disliked);
 
-
   constructor(private httpClient: HttpClient) {}
 
   addLiked(joke: IJoke) {
+    //checks if not already present in the array
+    if (!this.liked.find(el => el.joke === joke.joke))
     this.liked.push(joke);
   }
 
   addDisliked(joke: IJoke) {
+    //checks if not already present in the array
+    if (!this.disliked.find(el => el.joke === joke.joke))
     this.disliked.push(joke);
   }
 
@@ -35,14 +38,14 @@ export class DataServiceService {
 
   moveToLiked(joke: IJoke) {
     //remove from disliked
-    this.disliked = this.disliked.filter(j => j.joke !=  joke.joke);
+    this.disliked = this.disliked.filter((j) => j.joke != joke.joke);
     //add to liked
     this.liked.push(joke);
   }
 
   moveToDisliked(joke: IJoke) {
     //remove from liked
-    this.liked = this.liked.filter(j => j.joke !=  joke.joke);
+    this.liked = this.liked.filter((j) => j.joke != joke.joke);
     //add to disliked
     this.disliked.push(joke);
   }
