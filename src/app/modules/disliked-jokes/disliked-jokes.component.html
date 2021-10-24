@@ -1,1 +1,6 @@
-<p>disliked-jokes works!</p>
+<div class="container text-center py-5">
+    <div *ngFor="let d of disliked">
+        <p [innerHtml] = d.joke></p>
+        <button class="button like" (click)="addLiked(d.joke)">Like</button>
+    </div>
+</div>

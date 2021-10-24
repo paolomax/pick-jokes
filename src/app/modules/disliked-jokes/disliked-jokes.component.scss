@@ -1,0 +1,14 @@
+.container {
+    margin-top: 10vh;
+    background-color: red;
+    color: black;
+}
+
+button {
+    min-width: 100px;
+    border-radius: 10px;
+}
+
+button.like {
+    background-color: lightgreen;
+}

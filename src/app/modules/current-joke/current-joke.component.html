@@ -1,4 +1,7 @@
-<div class="container text-center d-flex align-items-center justify-content-center" [innerHTML] = currentJoke.joke></div>
-<div class="container text-center d-flex align-items-center justify-content-around">
-    <button (click)="addLiked(currentJoke.joke)">Like</button> <button>Dislike</button>
+<div class="container text-center py-3">
+  <p class="" [innerHTML]="currentJoke.joke"></p>
+  <div class="w-25 mx-auto d-flex justify-content-around">
+    <button class="button like" (click)="addLiked(currentJoke.joke)">Like</button>
+    <button class="button dislike" (click)="addDisliked(currentJoke.joke)">Dislike</button>
+  </div>
 </div>

@@ -17,4 +17,8 @@ export class LikedJokesComponent implements OnInit {
     this.dataService.getLiked().subscribe( data => this.liked = data)
   }
 
+  addDisliked(j : string) {
+    this.dataService.addDisliked({joke: j});
+  }
+
 }

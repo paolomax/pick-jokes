@@ -1,5 +1,17 @@
 div.container {
     background-color: white;
     color: black;
-    height: 10vh;
+}
+
+button {
+    min-width: 100px;
+    border-radius: 10px;
+}
+
+button.like {
+    background-color: lightgreen;
+}
+
+button.dislike {
+    background-color: lightcoral;
 }

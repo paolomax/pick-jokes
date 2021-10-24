@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { IJoke } from 'src/app/models/joke';
+import { DataServiceService } from 'src/app/shared/data-service.service';
 
 @Component({
   selector: 'pjk-disliked-jokes',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DislikedJokesComponent implements OnInit {
 
-  constructor() { }
+  disliked : IJoke[] = [];
+
+  constructor(private dataService : DataServiceService) { }
 
   ngOnInit(): void {
+    this.dataService.getDisliked().subscribe( data => this.disliked = data)
   }
 
+  addLiked(j : string) {
+    this.dataService.addLiked({joke: j});
+  }
 }

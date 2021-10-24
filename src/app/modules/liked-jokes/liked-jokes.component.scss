@@ -3,3 +3,12 @@
     background-color: green;
     color: black;
 }
+
+button {
+    min-width: 100px;
+    border-radius: 10px;
+}
+
+button.dislike {
+    background-color: lightcoral;
+}
